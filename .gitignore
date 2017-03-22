@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+node_modules/
+.nyc_output/
+coverage/
+wordusage.js
+wordusage.min.js

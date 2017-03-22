@@ -1,0 +1,84 @@
+{
+    "name": "wordusage",
+    "version": "1.0.0",
+    "description": "Word usage advice pertinent to technical writing",
+    "license": "MIT",
+    "repository": "https://github.com/gaurav-nelson/wordusage",
+    "bugs": "https://github.com/gaurav-nelson/wordusageissues",
+    "wordusage": {
+        "allow": [
+            "butt"
+        ]
+    },
+    "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "wordusage",
+        "writing",
+        "language",
+        "english"
+    ],
+    "author": "Gaurav Nelson",
+    "bin": "cli.js",
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "files": [
+        "index.js",
+        "filter.js",
+        "cli.js"
+    ],
+    "dependencies": {
+        "meow": "^3.3.0",
+        "remark-message-control": "^2.0.0",
+        "remark-parse": "^2.0.0",
+        "remark-retext": "^2.0.0",
+        "retext-english": "^2.0.0",
+        "retext-wordusage": "^1.0.4",
+        "unified": "^5.0.0",
+        "unified-diff": "^1.0.0",
+        "unified-engine": "^2.0.0",
+        "update-notifier": "^2.1.0",
+        "vfile": "^2.0.0",
+        "vfile-reporter": "^3.0.0",
+        "vfile-sort": "^2.0.0"
+    },
+    "devDependencies": {
+        "ava": "^0.18.1",
+        "browserify": "^13.0.0",
+        "esmangle": "^1.0.1",
+        "execa": "^0.6.0",
+        "nyc": "^10.1.0",
+        "remark-cli": "^2.0.0",
+        "remark-preset-wooorm": "^1.0.0",
+        "xo": "^0.17.0"
+    },
+    "scripts": {
+        "build-md": "remark . --quiet --frail",
+        "build-bundle": "browserify index.js -s wordusage > wordusage.js",
+        "build-mangle": "esmangle wordusage.js > wordusage.min.js",
+        "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+        "lint": "xo"
+    },
+    "nyc": {
+        "check-coverage": true,
+        "lines": 100,
+        "functions": 100,
+        "branches": 100
+    },
+    "xo": {
+        "space": true,
+        "rules": {
+            "ava/prefer-async-await": "off",
+            "max-lines": "off"
+        },
+        "ignores": [
+            "wordusage.js"
+        ]
+    },
+    "remarkConfig": {
+        "output": true,
+        "presets": "wooorm"
+    }
+}
