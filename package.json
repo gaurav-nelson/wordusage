@@ -1,6 +1,6 @@
 {
     "name": "wordusage",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Word usage advice pertinent to technical writing",
     "license": "MIT",
     "repository": "https://github.com/gaurav-nelson/wordusage",
@@ -35,7 +35,7 @@
         "remark-parse": "^2.0.0",
         "remark-retext": "^2.0.0",
         "retext-english": "^2.0.0",
-        "retext-wordusage": "^1.0.4",
+        "retext-wordusage": ">=1.0.5",
         "unified": "^5.0.0",
         "unified-diff": "^1.0.0",
         "unified-engine": "^2.0.0",
